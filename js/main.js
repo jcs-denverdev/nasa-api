@@ -19,7 +19,7 @@ function getFetch(){
           // document.querySelector('iframe').classList.add("hidden");
           document.querySelector('img').src = data.url;
         } else if ( data.media_type === 'video' ) {
-          // document.querySelector('img').classList.add("hidden");
+          document.querySelector('img').classList.add("hidden");
           // document.querySelector('iframe').classList.remove("hidden");
           document.querySelector('iframe').src = data.url;
         }

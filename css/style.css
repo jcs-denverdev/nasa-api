@@ -8,6 +8,11 @@
   border: 2px dashed black;
 }
 
+/* classList property */
+.hidden {
+  display: none;
+}
+
 /******************************************
 /* LAYOUT
 /*******************************************/
@@ -18,8 +23,14 @@ img {
   width: 50%;
 }
 
-.hidden {
-  display: none;
+h2 {
+  padding: 2em;
+  margin: 0 auto;
+}
+
+h3 {
+  padding: 2em;
+  line-height: 1.5em;
 }
 
 
