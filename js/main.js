@@ -14,10 +14,13 @@ function getFetch(){
         if ( data.media_type === 'image' ) {
           // make sure video disappears
           // make your own!!
+
+          document.querySelector('img').classList.remove("hidden");
+          // document.querySelector('iframe').classList.add("hidden");
           document.querySelector('img').src = data.url;
         } else if ( data.media_type === 'video' ) {
-          // document.querySelector('img').src = null;
-          document.querySelector('iframe').classList.toggle();
+          // document.querySelector('img').classList.add("hidden");
+          // document.querySelector('iframe').classList.remove("hidden");
           document.querySelector('iframe').src = data.url;
         }
         
