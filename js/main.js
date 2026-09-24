@@ -1,6 +1,9 @@
 //The user will enter a date. Use that date to get the NASA picture of the day from that date! https://api.nasa.gov/
 
 document.getElementById('button').addEventListener('click', getFetch);
+const card = document.querySelector('card');
+let image = document.querySelector('img');
+let vid_frame = document.querySelector('iframe');
 
 function getFetch(){
   const choice = document.querySelector('input').value.toLowerCase()
@@ -11,19 +14,22 @@ function getFetch(){
       .then(res => res.json()) // parse response as JSON
       .then(data => {
         // console.log(choice)
+        
+        card.classList.add('card');
         if ( data.media_type === 'image' ) {
           // make sure video disappears
           // make your own!!
 
-          document.querySelector('img').classList.remove("hidden");
+          image.classList.remove("hidden");
           // document.querySelector('iframe').classList.add("hidden");
-          document.querySelector('img').src = data.url;
+          image.src = data.url;
+          
         } else if ( data.media_type === 'video' ) {
-          document.querySelector('img').classList.add("hidden");
-          // document.querySelector('iframe').classList.remove("hidden");
-          document.querySelector('iframe').src = data.url;
+          image.classList.add("hidden");
+          vid_frame.src = data.url;
+          vid_frame.classList.remove("hidden");
         }
-        
+      
         document.querySelector('h2').innerText = data.title;
         document.querySelector('h3').innerText = data.explanation;
       })
